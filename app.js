@@ -7,7 +7,7 @@ const contain = document.querySelector("#container");
 document.addEventListener("DOMContentLoaded", () => {
 	searchall();
 });
-$form.addEventListener("submit", (e) => {
+$form.addEventListener("input", (e) => {
 	e.preventDefault();
 	const data = new FormData($form);
 	const name = data.get("name");
