@@ -31,7 +31,7 @@ async function searchcountry(name) {
 		const card = document.createElement("div");
 		card.style.backgroundColor = "white";
 		card.style.boxShadow = " 0px 0px 7px 2px #00000008";
-
+		card.classList.add("info");
 		const h2 = document.createElement("h2");
 		h2.textContent = responseJS[i].name.common;
 		const flag = document.createElement("img");
@@ -45,6 +45,10 @@ async function searchcountry(name) {
 		population.textContent = responseJS[i].population;
 		card.append(flag, h2, population, region, capital);
 		contain.appendChild(card);
+		const info = document.querySelector(".info");
+		card.addEventListener("click", () => {
+			window.location.href = "./country.html?name=" + responseJS[i].name.common;
+		});
 	}
 	console.log(responseJS);
 }
@@ -56,7 +60,7 @@ async function searchregion(name) {
 		const card = document.createElement("div");
 		card.style.backgroundColor = "white";
 		card.style.boxShadow = " 0px 0px 7px 2px #00000008";
-
+		card.classList.add("info");
 		const h2 = document.createElement("h2");
 		h2.textContent = responseJS[i].name.common;
 		const flag = document.createElement("img");
@@ -69,6 +73,10 @@ async function searchregion(name) {
 		population.textContent = responseJS[i].population;
 		card.append(flag, h2, population, region, capital);
 		contain.appendChild(card);
+		const info = document.querySelector(".info");
+		card.addEventListener("click", () => {
+			window.location.href = "./country.html?name=" + responseJS[i].name.common;
+		});
 	}
 	console.log(responseJS);
 }
@@ -82,7 +90,7 @@ async function searchall() {
 		const card = document.createElement("div");
 		card.style.backgroundColor = "white";
 		card.style.boxShadow = " 0px 0px 7px 2px #00000008";
-
+		card.classList.add("info");
 		const h2 = document.createElement("h2");
 		h2.textContent = responseJS[i].name.common;
 		const flag = document.createElement("img");
@@ -95,6 +103,9 @@ async function searchall() {
 		population.textContent = responseJS[i].population;
 		card.append(flag, h2, population, region, capital);
 		contain.appendChild(card);
+		card.addEventListener("click", () => {
+			window.location.href = "./country.html?name=" + responseJS[i].name.common;
+		});
 	}
 	console.log(responseJS);
 }
